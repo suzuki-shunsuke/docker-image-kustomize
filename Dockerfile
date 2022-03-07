@@ -1,4 +1,4 @@
-FROM alpine:3.12.0 as certificate
+FROM alpine:3.15.0 as certificate
 RUN apk add -U --no-cache ca-certificates
 FROM busybox:1.31.1
 COPY --from=certificate /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
